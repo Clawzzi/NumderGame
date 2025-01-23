@@ -28,6 +28,16 @@ document.getElementById("endButton").onclick = function() {
 document.getElementById("restartButton").onclick = startGame;
 
 document.getElementById("guessButton").onclick = function() {
+    processGuess();
+};
+
+document.getElementById("guessInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        processGuess();
+    }
+});
+
+function processGuess() {
     let userGuess = document.getElementById("guessInput").value;
 
     if (userGuess === "") {
@@ -55,4 +65,4 @@ document.getElementById("guessButton").onclick = function() {
     }
 
     document.getElementById("guessInput").value = "";
-};
+}
