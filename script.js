@@ -1,3 +1,4 @@
+// script.js
 let randomNumber;
 let attempts;
 
@@ -6,6 +7,14 @@ document.getElementById("startButton").onclick = function() {
     attempts = 5;
     document.getElementById("gameArea").style.display = "block";
     document.getElementById("message").textContent = "Я загадав число від 1 до 100. Спробуй відгадати!";
+    document.getElementById("startButton").style.display = "none";
+    document.getElementById("endButton").style.display = "inline-block";
+};
+
+document.getElementById("endButton").onclick = function() {
+    document.getElementById("gameArea").style.display = "none";
+    document.getElementById("startButton").style.display = "inline-block";
+    document.getElementById("endButton").style.display = "none";
 };
 
 document.getElementById("guessButton").onclick = function() {
