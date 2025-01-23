@@ -53,4 +53,6 @@ document.getElementById("guessButton").onclick = function() {
     } else {
         document.getElementById("message").textContent = "Вибачте, ви використали всі спроби. Загадане число було " + randomNumber;
     }
+
+    document.getElementById("guessInput").value = "";
 };

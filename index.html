@@ -8,13 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <button id="startButton">Почати гру</button>
-        <button id="endButton" style="display:none;">Закінчити гру</button>
-        <button id="restartButton" style="display:none;">Розпочати гру знов</button>
+        <h1>Guess the Number</h1>
+        <div class="button-group">
+            <button id="startButton" class="btn">Почати гру</button>
+            <button id="endButton" class="btn" style="display:none;">Закінчити гру</button>
+            <button id="restartButton" class="btn" style="display:none;">Розпочати гру знов</button>
+        </div>
         <div id="gameArea" style="display:none;">
             <p>Я загадав число від 1 до 100. Спробуй відгадати!</p>
             <input type="number" id="guessInput" placeholder="Введіть ваше число">
-            <button id="guessButton">Відгадати</button>
+            <button id="guessButton" class="btn">Відгадати</button>
             <p id="message">У вас є 5 спроб</p>
         </div>
     </div>
