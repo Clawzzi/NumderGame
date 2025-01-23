@@ -1,12 +1,20 @@
 /* styles.css */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background: linear-gradient(270deg, #ffecd2, #fcb69f);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 15s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -17,12 +25,24 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h1 {
     color: #333;
     margin-bottom: 20px;
     font-size: 24px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .button-group {
@@ -41,11 +61,12 @@ h1 {
     margin: 10px 5px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
     background-color: #ff6b4a;
+    transform: scale(1.1);
 }
 
 input[type="number"] {
@@ -56,9 +77,34 @@ input[type="number"] {
     border-radius: 5px;
     width: calc(100% - 30px);
     font-size: 18px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #ff7e5f;
 }
 
 p {
     font-size: 20px;
     color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#message {
+    animation: messageAnimation 1s ease-in-out;
+}
+
+@keyframes messageAnimation {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+#guessHistory {
+    display: inline-block;
+    animation: historyAnimation 1s ease-in-out;
+}
+
+@keyframes historyAnimation {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
